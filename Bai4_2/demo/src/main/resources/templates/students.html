@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh sách sinh viên</title>
+</head>
+<body>
+<h2>Danh sách sinh viên</h2>
+<table border="1">
+    <tr>
+        <th>MSSV</th>
+        <th>Họ tên</th>
+        <th>Năm sinh</th>
+        <th>Giới tính</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.mssv}"></td>
+        <td th:text="${student.hoTen}"></td>
+        <td th:text="${student.namSinh}"></td>
+        <td th:text="${student.gioiTinh}"></td>
+    </tr>
+</table>
+</body>
+</html>
