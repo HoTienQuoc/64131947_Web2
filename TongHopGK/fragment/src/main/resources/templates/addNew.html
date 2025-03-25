@@ -9,11 +9,24 @@
 <!-- Include Header -->
 <div th:replace="fragments/header :: header"></div>
 
-<!-- Main Content -->
-<main class="container flex-grow-1 my-4">
-  <div th:replace="fragments/content :: content"></div>
-</main>
-
+<div class="container mt-5">
+  <h2 class="mb-4">Add New Student</h2>
+  <form th:action="@{/addNew}" th:object="${student}" method="post">
+    <div class="mb-3">
+      <label class="form-label">MSSV</label>
+      <input type="text" class="form-control" th:field="*{mssv}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Name</label>
+      <input type="text" class="form-control" th:field="*{name}" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">DiemTB</label>
+      <input type="number" step="0.1" class="form-control" th:field="*{diemTB}" required>
+    </div>
+    <button type="submit" class="btn btn-success">Save Student</button>
+  </form>
+</div>
 <!-- Include Footer -->
 <footer class="mt-auto">
   <div th:replace="fragments/footer :: footer"></div>
