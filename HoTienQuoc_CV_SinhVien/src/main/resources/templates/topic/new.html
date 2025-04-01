@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout(~{::title}, ~{:: #page_content_id})}">
+<head>
+    <title>Add New Topic</title>
+</head>
+<body>
+<div id="page_content_id">
+    <h1>Add New Topic</h1>
+
+    <form th:action="@{/topic/add}" th:object="${topic}" method="post" class="needs-validation" novalidate>
+        <!-- Có thể thêm trường ID nếu muốn người dùng nhập, nếu không Controller sẽ tự tạo -->
+        <!--
+        <div class="mb-3">
+            <label for="topicId" class="form-label">Topic ID (Optional):</label>
+            <input type="text" class="form-control" id="topicId" th:field="*{id}">
+        </div>
+        -->
+        <div class="mb-3">
+            <label for="topicName" class="form-label">Topic Name:</label>
+            <input type="text" class="form-control" id="topicName" th:field="*{topicName}" required>
+            <div class="invalid-feedback">Please provide a topic name.</div>
+        </div>
+        <div class="mb-3">
+            <label for="topicDescription" class="form-label">Description:</label>
+            <textarea class="form-control" id="topicDescription" th:field="*{topicDescription}" rows="3"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="supervisorId" class="form-label">Supervisor ID:</label>
+            <input type="text" class="form-control" id="supervisorId" th:field="*{supervisorId}">
+        </div>
+        <div class="mb-3">
+            <label for="topicType" class="form-label">Topic Type:</label>
+            <input type="text" class="form-control" id="topicType" th:field="*{topicType}">
+            <!-- Hoặc dùng select nếu có danh sách type cố định -->
+            <!--
+            <select class="form-select" id="topicType" th:field="*{topicType}">
+                <option value="">Choose...</option>
+                <option value="Research">Research</option>
+                <option value="Project">Project</option>
+            </select>
+            -->
+        </div>
+
+        <button type="submit" class="btn btn-primary">Save Topic</button>
+        <a th:href="@{/topic/list}" class="btn btn-secondary">Cancel</a>
+    </form>
+
+    <!-- Basic form validation script -->
+    <script>
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+
+</div>
+</body>
+</html>

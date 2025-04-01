@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout(~{::title}, ~{:: #page_content_id})}">
+<head>
+    <title th:text="'View Topic: ' + ${topic.topicName}">View Topic</title>
+</head>
+<body>
+<div id="page_content_id">
+    <h1 th:text="'Topic Details: ' + ${topic.topicName}">Topic Details</h1>
+
+    <div th:if="${topic != null}">
+        <dl class="row">
+            <dt class="col-sm-3">ID:</dt>
+            <dd class="col-sm-9" th:text="${topic.id}">Topic ID</dd>
+
+            <dt class="col-sm-3">Name:</dt>
+            <dd class="col-sm-9" th:text="${topic.topicName}">Topic Name</dd>
+
+            <dt class="col-sm-3">Description:</dt>
+            <dd class="col-sm-9" th:text="${topic.topicDescription}">Topic Description</dd>
+
+            <dt class="col-sm-3">Supervisor ID:</dt>
+            <dd class="col-sm-9" th:text="${topic.supervisorId}">Supervisor ID</dd>
+
+            <dt class="col-sm-3">Type:</dt>
+            <dd class="col-sm-9" th:text="${topic.topicType}">Topic Type</dd>
+        </dl>
+    </div>
+    <div th:if="${topic == null}" class="alert alert-warning">
+        Topic not found.
+    </div>
+
+    <a th:href="@{/topic/list}" class="btn btn-secondary">Back to List</a>
+    <!-- Có thể thêm nút Edit ở đây -->
+
+</div>
+</body>
+</html>

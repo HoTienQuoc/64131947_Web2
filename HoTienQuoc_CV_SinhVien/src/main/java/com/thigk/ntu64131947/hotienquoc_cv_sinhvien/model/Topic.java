@@ -1,12 +1,17 @@
 package com.thigk.ntu64131947.hotienquoc_cv_sinhvien.model;
 
 public class Topic {
-    String id ;
-    String topicName ;
-    String topicDescription ;
-    String supervisorId;
-    String topicType;
+    private String id;                 // Changed to private
+    private String topicName;          // Changed to private
+    private String topicDescription;   // Changed to private
+    private String supervisorId;       // Changed to private
+    private String topicType;          // Changed to private
 
+    // Default (no-argument) constructor - REQUIRED for Spring MVC form binding
+    public Topic() {
+    }
+
+    // Constructor with arguments (optional, but good to have)
     public Topic(String id, String topicName, String topicDescription, String supervisorId, String topicType) {
         this.id = id;
         this.topicName = topicName;
@@ -15,7 +20,8 @@ public class Topic {
         this.topicType = topicType;
     }
 
-    public String id() {
+    // Standard Getters and Setters
+    public String getId() {
         return id;
     }
 
@@ -23,7 +29,7 @@ public class Topic {
         this.id = id;
     }
 
-    public String topicName() {
+    public String getTopicName() {
         return topicName;
     }
 
@@ -31,7 +37,7 @@ public class Topic {
         this.topicName = topicName;
     }
 
-    public String topicDescription() {
+    public String getTopicDescription() {
         return topicDescription;
     }
 
@@ -39,7 +45,7 @@ public class Topic {
         this.topicDescription = topicDescription;
     }
 
-    public String supervisorId() {
+    public String getSupervisorId() {
         return supervisorId;
     }
 
@@ -47,11 +53,23 @@ public class Topic {
         this.supervisorId = supervisorId;
     }
 
-    public String topicType() {
+    public String getTopicType() {
         return topicType;
     }
 
     public void setTopicType(String topicType) {
         this.topicType = topicType;
+    }
+
+    // Optional: toString() for debugging
+    @Override
+    public String toString() {
+        return "Topic{" +
+                "id='" + id + '\'' +
+                ", topicName='" + topicName + '\'' +
+                ", topicDescription='" + topicDescription + '\'' +
+                ", supervisorId='" + supervisorId + '\'' +
+                ", topicType='" + topicType + '\'' +
+                '}';
     }
 }

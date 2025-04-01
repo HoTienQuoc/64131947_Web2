@@ -8,11 +8,11 @@
         <version>3.4.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.thiGK.ntu64131947</groupId>
-    <artifactId>HoTienQuoc_CV_SinhVien</artifactId>
+    <groupId>com.example.fragment</groupId>
+    <artifactId>fragment</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>HoTienQuoc_CV_SinhVien</name>
-    <description>HoTienQuoc_CV_SinhVien</description>
+    <name>fragment</name>
+    <description>Demo project for Spring Boot</description>
     <url/>
     <licenses>
         <license/>
@@ -28,8 +28,6 @@
     </scm>
     <properties>
         <java.version>23</java.version>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
@@ -39,10 +37,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>
 
         <dependency>
