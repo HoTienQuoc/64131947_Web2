@@ -1,31 +1,11 @@
-<!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-      th:replace="~{layout :: layout(~{::title}, ~{:: #page_content_id})}">
-<head>
-    <title th:text="'View Student: ' + ${student.name}">View Student</title>
-</head>
-<body>
-<div id="page_content_id">
-    <h1 th:text="'Student Details: ' + ${student.name}">Student Details</h1>
-
-    <div th:if="${student != null}">
-        <dl class="row">
-            <dt class="col-sm-3">ID:</dt>
-            <dd class="col-sm-9" th:text="${student.id}">Student ID</dd>
-
-            <dt class="col-sm-3">Name:</dt>
-            <dd class="col-sm-9" th:text="${student.name}">Student Name</dd>
-
-            <dt class="col-sm-3">Group ID:</dt>
-            <dd class="col-sm-9" th:text="${student.groupId}">Group ID</dd>
-        </dl>
-    </div>
-    <div th:if="${student == null}" class="alert alert-warning">
-        Student not found.
-    </div>
-
-    <a th:href="@{/student/list}" class="btn btn-secondary">Back to List</a>
-    <!-- Có thể thêm nút Edit ở đây -->
+<div th:fragment="content">
+  <h2>Student Details</h2>
+  <div th:if="${student != null}">
+    <p><strong>ID:</strong> <span th:text="${student.id}"></span></p>
+    <p><strong>Name:</strong> <span th:text="${student.name}"></span></p>
+    <p><strong>Group ID:</strong> <span th:text="${student.groupId}"></span></p>
+  </div>
+  <div th:if="${student == null}">
+    <p class="text-danger">Student not found.</p>
+  </div>
 </div>
-</body>
-</html>

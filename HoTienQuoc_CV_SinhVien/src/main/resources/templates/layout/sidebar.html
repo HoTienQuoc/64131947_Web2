@@ -1,0 +1,34 @@
+<div th:fragment="sidebar">
+  <div class="d-flex flex-column align-items-center p-3">
+    <!-- Ảnh logo hoặc gì đó -->
+    <img src="/static/Logo-Khoa-CNTT-NTU.png" alt="Logo" class="img-fluid mb-3" style="max-width: 100%; height: auto;" />
+
+    <ul class="nav flex-column border rounded w-100 text-center">
+      <li class="nav-item border-bottom">
+        <a class="nav-link" href="/">Dashboard</a>
+      </li>
+
+      <!-- Topic -->
+      <li class="nav-item border-bottom">
+        <a class="nav-link" href="/topic/all">Topic - List</a>
+      </li>
+      <li class="nav-item border-bottom">
+        <a class="nav-link" href="/topic/new">Topic - Add New</a>
+      </li>
+      <li class="nav-item border-bottom">
+        <a class="nav-link" href="#">&emsp13;</a>
+      </li>
+
+      <!-- Student -->
+      <li class="nav-item border-bottom">
+        <a class="nav-link" href="/student/all">Student - List</a>
+      </li>
+      <li class="nav-item border-bottom">
+        <a class="nav-link" href="/student/new">Student - Add New</a>
+      </li>
+      <li class="nav-item border-bottom">
+        <a class="nav-link" href="#">&emsp13;</a>
+      </li>
+    </ul>
+  </div>
+</div>

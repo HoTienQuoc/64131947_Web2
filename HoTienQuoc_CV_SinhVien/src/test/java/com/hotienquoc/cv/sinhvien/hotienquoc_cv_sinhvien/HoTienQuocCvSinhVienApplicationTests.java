@@ -1,4 +1,4 @@
-package com.thigk.ntu64131947.hotienquoc_cv_sinhvien;
+package com.hotienquoc.cv.sinhvien.hotienquoc_cv_sinhvien;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -6,8 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class HoTienQuocCvSinhVienApplicationTests {
 
-    @Test
-    void contextLoads() {
-    }
+	@Test
+	void contextLoads() {
+	}
 
 }
